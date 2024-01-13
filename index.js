@@ -1,4 +1,4 @@
-let movies = [
+let slideshow = [
     {
       
       image: "Screenshot 2.png"
@@ -23,7 +23,7 @@ let movies = [
   let slideIndex = 0; // to track current slide index.
   
   const createSlide = () => {
-    if (slideIndex >= movies.length) {
+    if (slideIndex >= slideshow.length) {
       slideIndex = 0;
     }
   
@@ -36,8 +36,8 @@ let movies = [
   
     // attaching all elements
     imgElement.appendChild(document.createTextNode(""));
-    h1.appendChild(document.createTextNode(movies[slideIndex].name));
-    p.appendChild(document.createTextNode(movies[slideIndex].des));
+    h1.appendChild(document.createTextNode(slideshow[slideIndex].name));
+    p.appendChild(document.createTextNode(slideshow[slideIndex].des));
     content.appendChild(h1);
     content.appendChild(p);
     slide.appendChild(content);
@@ -45,7 +45,7 @@ let movies = [
     carousel.appendChild(slide);
   
     // setting up image
-    imgElement.src = movies[slideIndex].image;
+    imgElement.src = slideshow[slideIndex].image;
     slideIndex++;
   
     // setting elements classname
